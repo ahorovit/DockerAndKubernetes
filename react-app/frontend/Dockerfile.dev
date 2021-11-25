@@ -6,6 +6,8 @@ COPY package.json .
 
 RUN npm install
 
+# with volumes, this isn't strictly needed
+# --> leaving it in gives flexibility to move away from docker-compose or build prod Dockerfile
 COPY . .
 
 CMD ["npm", "run", "start"]
