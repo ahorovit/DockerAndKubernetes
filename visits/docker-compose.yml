@@ -1,0 +1,8 @@
+version: '3'          # docker composer version
+services:             # service ~= container
+  redis-server:       # simply by configuring these two services, docker-compose makes them open to communication on the same network
+    image: 'redis'    # --> these service names can be used as URLs in containers running on network
+  node-app:
+    build: .          # look in current directory for Dockerfile
+    ports:
+      - "4001:8081"   # maps local 4001 to container's 8081
