@@ -10,3 +10,12 @@ services:
       - /app/node_modules
       - .:/app
     stdin_open: true
+  tests:                          # separate service lets us run tests without docker exec
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm", "run", "test"]
+    stdin_open: true

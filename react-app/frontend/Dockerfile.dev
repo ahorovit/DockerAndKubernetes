@@ -10,4 +10,5 @@ RUN npm install
 # --> leaving it in gives flexibility to move away from docker-compose or build prod Dockerfile
 COPY . .
 
-CMD ["npm", "run", "start"]
+# This command is only suitable for development environment
+CMD ["npm", "run", "start"] 
